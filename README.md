@@ -6,7 +6,8 @@ React - Redux based employee polls project. Its all about state management.
 
 You have been asked by the HR department of your company to build an application that employees can use internally. In order to improve collaboration and transparency within the company, every employee can access the application and create a poll with two proposed solutions. Employees can then vote on these solutions and see which solutions have the most votes. In addition, HR has requested you have a dashboard that lists every employee ordered by the number of polls they've created and answered. To give employees incentive to use your application, HR will give a prize each quarter for the top employees who have created and answered the most polls.
 
-## Started Code
+
+## Starter Code
 
 The [starter code](https://github.com/udacity/nd0191-c2-React-Redux-project-starter) will consist of a _DATA.js file, which represents a fake database and contains methods that let you access the data. The README file outlines how the data is stored and details the methods you can use to access the database.
 
@@ -15,7 +16,28 @@ The only thing you need to edit in the _DATA.js file is the value of avatarURL. 
 Using the provided starter code, you will build a React/Redux front end for the application.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Data
+
+There are two types of objects stored in our database:
+
+* Users
+* Questions
+
+*Description*: Get all of the existing users from the database.
+*Return Value*: Object where the key is the user’s id and the value is the user object.
+
+2) `_getQuestions()` Method
+
+*Description*: Get all of the existing questions from the database.
+*Return Value*: Object where the key is the question’s id and the value is the question object.
+
+3) `_saveQuestion(question)` Method
+
+*Description*: Save the polling question in the database. If one of the parameters are missing, an error is thrown.
+*Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`.
+
+## How to install the application
+Clone this repo [App code](https://github.com/sethuramanpl/EmployeePollFinal)
 
 In the project directory, you can run:
 
