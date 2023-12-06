@@ -12,7 +12,7 @@ const AnswerPoll = (props) => {
     const { authedUser, question, author, dispatch} = props
 
     if (!authedUser || !question || !author) {
-        return <Navigate to="/Error"/>;
+        //return <Navigate to="/Error"/>;
     }
 
     const hasVotedForOptionOne  = question.optionOne.votes.includes(authedUser)
@@ -22,13 +22,13 @@ const AnswerPoll = (props) => {
     const handleOptionOne = (e) => {
         e.preventDefault();
         dispatch(handleAddAnswer(question.id, "optionOne"));
-        navigate("/home");
+        // navigate("/home");
     };
 
     const handleOptionTwo = (e) => {
         e.preventDefault();
         dispatch(handleAddAnswer(question.id, "optionTwo"));
-        navigate("/home");
+        // navigate("/home");
     };
 
     const calcPercentage = (option, question) => {
@@ -97,8 +97,5 @@ const mapStateToProps = ({questions, users,authedUser}) => {
     }catch(e){
         return <Navigate to="/Error" />
     }
-
-
-
 }
 export default connect(mapStateToProps)(AnswerPoll);

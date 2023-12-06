@@ -10,10 +10,10 @@ const Card = ({question, author}) => {
     const clickhandle = (e) => {
         e.preventDefault();
         console.log(question.id)
-        navigate(`/poll/${question.id}`)
+        navigate(`/questions/${question.id}`)
     }
   return (
-    <Link to={`/poll/${question.id}`} className="card-container">
+    <Link to={`/questions/${question.id}`} className="card-container">
             <div className="card">
               <h3>{author.name}</h3>
               {new Date(question.timestamp).toDateString()}
