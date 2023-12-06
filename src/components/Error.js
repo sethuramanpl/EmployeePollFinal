@@ -12,8 +12,8 @@ const Error = () => {
 
   return (
     <div>
-        <h2>Page not found.</h2>
-        <button onClick={clickHandler}>Retrun to Login Page</button>
+        <h2>404 - Page not found.</h2>
+        {/* <button onClick={clickHandler}>Retrun to Login Page</button> */}
     </div>
   )
 }

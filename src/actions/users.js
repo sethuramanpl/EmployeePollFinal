@@ -18,6 +18,7 @@ export function addQuestionUser({author, id}){
 }
 
 export function addAnswerUser(authedUser,qid,answer){
+    console.log('add answer user' + authedUser, qid, answer)
     return{
         type: ADD_ANSWER_USER,
         authedUser,

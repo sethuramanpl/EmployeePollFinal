@@ -16,6 +16,7 @@ export default function users(state={}, action){
 
             }
         case ADD_ANSWER_USER:
+            console.log('add answer user reducer' + JSON.stringify(action))
             return{
                 ...state,
                 [action.authedUser]:{

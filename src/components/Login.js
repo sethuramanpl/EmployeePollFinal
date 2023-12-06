@@ -2,15 +2,25 @@ import React, { useState } from 'react'
 import { connect } from "react-redux";
 import { setAuthedUser } from '../actions/authedUser';
 import { useNavigate } from "react-router-dom";
+import authedUser from '../reducers/authedUser';
+import {Navigate} from "react-router-dom";
 
-const Login = ({users, dispatch}) => {
+const Login = ({users, dispatch, userLoggedIn}) => {
 // console.log('list of users' + (props.users))
 const navigate = useNavigate();
+
 
 const [username, setUsername] = useState('sarahedo');
 const [password, setPassword] = useState('123');
 const [loginError, setLoginError] = useState('');
 
+if(userLoggedIn){
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log('urlParams' + urlParams)
+    const redirectUrl = urlParams.get('redirectTo');
+    console.log('redirectUrl' + redirectUrl)
+    return <Navigate to={redirectUrl ? redirectUrl : "/home"}/>;
+}
 
 const handleUsername = (e) => {
     setUsername(e.target.value)
@@ -42,7 +52,7 @@ const handleLoginClick = (e) => {
             console.log('Login successful!');
             setLoginError('');
             dispatch(setAuthedUser(username)); // dispatch(setAuthedUser(username)) updaet to username later
-            navigate("/home"); //
+           // navigate("/home"); //
           } else {
             // Failed login
             console.log('Login failed!');
@@ -71,8 +81,9 @@ const handleLoginClick = (e) => {
   )
 }
 
-const mapStateToProps = ({users}) => ({
-    users
+const mapStateToProps = ({users, authedUser}) => ({
+    users,
+    userLoggedIn: !!authedUser
 })
 
 export default connect(mapStateToProps)(Login)

@@ -22,6 +22,7 @@ function addQuestion(question){
 }
 
 function addAnswerQuestion(authedUser, qid, answer){
+    console.log('add answer question' + authedUser, qid, answer)
     return{
         type: ADD_ANSWER_QUESTION,
         authedUser,
