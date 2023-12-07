@@ -41,6 +41,10 @@ Clone this repo [App code](https://github.com/sethuramanpl/EmployeePollFinal)
 
 In the project directory, you can run:
 
+### `npm install`
+
+followed by
+
 ### `npm start`
 
 Runs the app in the development mode.\
